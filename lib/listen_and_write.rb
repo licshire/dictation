@@ -1,0 +1,1 @@
+Dir[(File.expand_path(File.dirname(__FILE__)) + "/listen_and_write/*.rb")].each { |file| require file }
