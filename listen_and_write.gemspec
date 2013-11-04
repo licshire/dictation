@@ -11,5 +11,6 @@ Gem::Specification.new do |s|
   s.files       = %w[
     lib/listen_and_write.rb
     lib/listen_and_write/word.rb
+    lib/listen_and_write/tts.rb
   ]
 end
