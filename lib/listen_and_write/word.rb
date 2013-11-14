@@ -22,20 +22,7 @@ module ListenAndWrite
     end
     
     def normalize(letter)
-      letter = letter.downcase.chomp
-      case letter
-      # German
-      when 'ä'
-        'ae'
-      when 'ö'
-        'oe'
-      when 'ü'
-        'ue'
-      when 'ß'
-        'ss'
-      else
-        letter
-      end
+      letter.downcase.chomp
     end
     
     def to_json(*args)
