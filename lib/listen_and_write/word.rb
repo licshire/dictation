@@ -22,7 +22,8 @@ module ListenAndWrite
     end
     
     def normalize(letter)
-      case letter.downcase.chomp
+      letter = letter.downcase.chomp
+      case letter
       # German
       when 'ä'
         'ae'

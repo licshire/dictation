@@ -14,15 +14,15 @@ class WordTest < Test::Unit::TestCase
   end
   
   def test_decompose_normal_word
-    assert_equal ['S','t','r','o','h','w','i','t','w','e','r'], @word.send(:decompose, 'Strohwitwer')
+    assert_equal ['s','t','r','o','h','w','i','t','w','e','r'], @word.send(:decompose, 'Strohwitwer')
   end
   
   def test_decompose_word_contains_german_umlaut
-    assert_equal ['F','u','ss','g','ae','n','g','e','r','ue','b','e','r','g','ae','n','g','e'], @word.send(:decompose, 'Fußgängerübergänge')
+    assert_equal ['f','u','ss','g','ae','n','g','e','r','ue','b','e','r','g','ae','n','g','e'], @word.send(:decompose, 'Fußgängerübergänge')
   end
   
   def test_orthography
-    assert_equal ['F','u','ss','g','ae','n','g','e','r','ue','b','e','r','g','ae','n','g','e'], @word.orthography
+    assert_equal ['f','u','ss','g','ae','n','g','e','r','ue','b','e','r','g','ae','n','g','e'], @word.orthography
   end
   
   def test_serialization
