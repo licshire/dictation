@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
     lib/listen_and_write.rb
     lib/listen_and_write/word.rb
     lib/listen_and_write/tts.rb
+    lib/listen_and_write/serializer.rb
     lib/listen_and_write/operating_system.rb
   ]
 end
