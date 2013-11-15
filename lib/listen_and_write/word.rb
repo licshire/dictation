@@ -22,7 +22,13 @@ module ListenAndWrite
     end
     
     def normalize(letter)
-      letter.downcase.chomp
+      letter = letter.downcase.chomp
+      case letter
+      when 'ß'
+        'ss'
+      else
+        letter
+      end
     end
     
     def to_json(*args)

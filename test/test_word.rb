@@ -13,11 +13,11 @@ class WordTest < Test::Unit::TestCase
   end
   
   def test_decompose_word_contains_german_umlaut
-    assert_equal ['f','u','ß','g','ä','n','g','e','r','ü','b','e','r','g','ä','n','g','e'], @word.send(:decompose, 'Fußgängerübergänge')
+    assert_equal ['f','u','ss','g','ä','n','g','e','r','ü','b','e','r','g','ä','n','g','e'], @word.send(:decompose, 'Fußgängerübergänge')
   end
   
   def test_orthography
-    assert_equal ['f','u','ß','g','ä','n','g','e','r','ü','b','e','r','g','ä','n','g','e'], @word.orthography
+    assert_equal ['f','u','ss','g','ä','n','g','e','r','ü','b','e','r','g','ä','n','g','e'], @word.orthography
   end
   
   def test_serialization
