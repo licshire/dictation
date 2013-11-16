@@ -2,7 +2,7 @@
 
 require 'json'
 
-module ListenAndWrite
+module Dictation
   class Word
     attr_accessor :value, :translation
     

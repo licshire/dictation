@@ -1,4 +1,4 @@
-module ListenAndWrite
+module Dictation
   class Serializer
     class << self
       def serialize(data, file)

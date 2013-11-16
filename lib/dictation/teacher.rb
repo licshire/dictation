@@ -1,4 +1,4 @@
-module ListenAndWrite
+module Dictation
   class Teacher
     SLEEP_INTERVAL_WRITE_LETTER = 0.8
     SLEEP_INTERVAL_READ_LETTER = 0.1

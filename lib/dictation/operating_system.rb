@@ -1,4 +1,4 @@
-module ListenAndWrite
+module Dictation
   class OperatingSystem
     TYPE = {
       lin:     'linux',

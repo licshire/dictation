@@ -1,4 +1,4 @@
-module ListenAndWrite
+module Dictation
   class TTS
     def initialize(language, voice = nil)
       set_language_and_voice(language, voice)

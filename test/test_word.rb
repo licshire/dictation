@@ -1,11 +1,11 @@
 # encoding: UTF-8
 
 require 'test/unit'
-require 'listen_and_write'
+require 'dictation'
 
 class WordTest < Test::Unit::TestCase
   def setup
-    @word = ListenAndWrite::Word.new('Fußgängerübergänge', '人行横道线')
+    @word = Dictation::Word.new('Fußgängerübergänge', '人行横道线')
   end
   
   def test_decompose_normal_word
@@ -21,7 +21,7 @@ class WordTest < Test::Unit::TestCase
   end
   
   def test_serialization
-    assert_equal '{"json_class":"ListenAndWrite::Word","data":["Fußgängerübergänge","人行横道线"]}', @word.to_json
+    assert_equal '{"json_class":"Dictation::Word","data":["Fußgängerübergänge","人行横道线"]}', @word.to_json
   end
   
   def test_deserialization
