@@ -3,25 +3,30 @@ module Dictation
     SLEEP_INTERVAL_WRITE_LETTER = 0.8
     SLEEP_INTERVAL_READ_LETTER = 0.1
     SLEEP_INTERVAL_GENERAL = 0.5
+
+    def initialize(tts_test, tts_verification)
+      @tts_test = tts_test
+      @tts_verification = tts_verification
+    end
     
-    def read_original_vocabulary(words, tts)
+    def dictates(words)
       words.each do |word|
         vocabulary = word.value
-        tts.speak(vocabulary)
+        @tts_test.speak(vocabulary)
         sleep(vocabulary.length * SLEEP_INTERVAL_WRITE_LETTER)
       end
     end
     
-    def reveal_answer(words, tts_orig, tts_annotation)
+    def verifies(words)
       words.each do |word|
-        tts_orig.speak(word.value)
+        @tts_test.speak(word.value)
         sleep(SLEEP_INTERVAL_GENERAL)
         word.orthography.each do |letter|
-          tts_orig.speak(letter)
+          @tts_test.speak(letter)
           sleep(SLEEP_INTERVAL_READ_LETTER)
         end
         sleep(SLEEP_INTERVAL_GENERAL)
-        tts_annotation.speak(word.translation)
+        @tts_verification.speak(word.translation)
         puts word.value + '     ' + word.translation
         sleep(SLEEP_INTERVAL_GENERAL)
       end
