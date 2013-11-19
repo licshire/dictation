@@ -15,5 +15,6 @@ Gem::Specification.new do |s|
     lib/dictation/serializer.rb
     lib/dictation/operating_system.rb
     lib/dictation/teacher.rb
+    lib/dictation/commander.rb
   ]
 end
