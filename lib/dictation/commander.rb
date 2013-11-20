@@ -16,6 +16,14 @@ module Dictation
           end,
 
           'dictate' => OptionParser.new do |opts|
+            opts.on('-b', '--begin WORD') do |word|
+              options[:dictate_begin] = word
+            end
+
+            opts.on('-e', '--end WORD') do |word|
+              options[:dictate_end] = word
+            end
+
             opts.on('-s', '--start LINE', Integer) do |line|
               options[:dictate_start] = line
             end
@@ -26,6 +34,14 @@ module Dictation
           end,
 
           'verify' => OptionParser.new do |opts|
+            opts.on('-b', '--begin WORD') do |word|
+              options[:verify_begin] = word
+            end
+
+            opts.on('-e', '--end WORD') do |word|
+              options[:verify_end] = word
+            end
+
             opts.on('-s', '--start LINE', Integer) do |line|
               options[:verify_start] = line
             end
