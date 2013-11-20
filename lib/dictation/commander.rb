@@ -6,32 +6,32 @@ module Dictation
       options = {}
       commands = {
           'new' => OptionParser.new do |opts|
-            opts.on('-t TTS', '--test') do |tts|
-              options[:test] = tts
+            opts.on('-d', '--dictate TTS') do |tts|
+              options[:dictate] = tts
             end
 
-            opts.on('-v TTS', '--verification') do |tts|
-              options[:verification] = tts
+            opts.on('-v', '--verify TTS') do |tts|
+              options[:verify] = tts
             end
           end,
 
-          'test' => OptionParser.new do |opts|
-            opts.on('-s LINE', '--start', Integer) do |line|
-              options[:test_start] = line
+          'dictate' => OptionParser.new do |opts|
+            opts.on('-s', '--start LINE', Integer) do |line|
+              options[:dictate_start] = line
             end
 
-            opts.on('-e LINE', '--end', Integer) do |line|
-              options[:test_end] = line
+            opts.on('-f', '--finish [LINE]', Integer) do |line|
+              options[:dictate_finish] = line
             end
           end,
 
           'verify' => OptionParser.new do |opts|
-            opts.on('-s LINE', '--start', Integer) do |line|
+            opts.on('-s', '--start LINE', Integer) do |line|
               options[:verify_start] = line
             end
 
-            opts.on('-e LINE', '--end', Integer) do |line|
-              options[:verify_end] = line
+            opts.on('-f', '--finish [LINE]', Integer) do |line|
+              options[:verify_finish] = line
             end
           end
       }
