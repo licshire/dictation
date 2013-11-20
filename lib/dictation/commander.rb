@@ -20,7 +20,7 @@ module Dictation
               options[:dictate_start] = line
             end
 
-            opts.on('-f', '--finish [LINE]', Integer) do |line|
+            opts.on('-f', '--finish LINE', Integer) do |line|
               options[:dictate_finish] = line
             end
           end,
@@ -30,7 +30,7 @@ module Dictation
               options[:verify_start] = line
             end
 
-            opts.on('-f', '--finish [LINE]', Integer) do |line|
+            opts.on('-f', '--finish LINE', Integer) do |line|
               options[:verify_finish] = line
             end
           end
