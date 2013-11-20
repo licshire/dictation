@@ -6,11 +6,11 @@ module Dictation
       options = {}
       commands = {
           'new' => OptionParser.new do |opts|
-            opts.on('-d', '--dictate TTS') do |tts|
+            opts.on('-d', '--dictate TTS', 'Specify two-letters language code for dictation') do |tts|
               options[:dictate] = tts
             end
 
-            opts.on('-v', '--verify TTS') do |tts|
+            opts.on('-v', '--verify TTS', 'Specify two-letters language code for verification') do |tts|
               options[:verify] = tts
             end
           end,
