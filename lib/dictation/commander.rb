@@ -18,6 +18,14 @@ module Dictation
               end
             end,
 
+            'add' => OptionParser.new do |opts|
+              opts.banner = set_banner('add')
+
+              opts.on('-t', '--target LANGUAGE', 'Specify the target language file for adding more words') do |language|
+                options[:language] = language
+              end
+            end,
+
             'dictate' => OptionParser.new do |opts|
               opts.banner = set_banner('dictate')
 
