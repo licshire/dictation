@@ -21,13 +21,17 @@ module Dictation
             'add' => OptionParser.new do |opts|
               opts.banner = set_banner('add')
 
-              opts.on('-t', '--target LANGUAGE', 'Specify the target language file for adding more words') do |language|
+              opts.on('-l', '--language LANGUAGE', 'Specify the target language file for adding more words') do |language|
                 options[:language] = language
               end
             end,
 
             'dictate' => OptionParser.new do |opts|
               opts.banner = set_banner('dictate')
+
+              opts.on('-l', '--language LANGUAGE', 'Specify the language for dictation') do |language|
+                options[:language] = language
+              end
 
               opts.on('-b', '--begin WORD', 'Begin with given word') do |word|
                 options[:dictate_begin] = word
@@ -48,6 +52,10 @@ module Dictation
 
             'verify' => OptionParser.new do |opts|
               opts.banner = set_banner('verify')
+
+              opts.on('-l', '--language LANGUAGE', 'Specify the language for dictation') do |language|
+                options[:language] = language
+              end
 
               opts.on('-b', '--begin WORD', 'Begin with given word') do |word|
                 options[:verify_begin] = word
