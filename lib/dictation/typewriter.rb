@@ -30,6 +30,7 @@ module Dictation
       end
       paint_puts("=" * 80, :green)
       paint_puts("Input is done.", :green)
+      @words
     end
 
     def paint(text, color)
