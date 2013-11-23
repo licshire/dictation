@@ -34,19 +34,19 @@ module Dictation
               end
 
               opts.on('-b', '--begin WORD', 'Begin with given word') do |word|
-                options[:dictate_begin] = word
+                options[:word_begin] = word
               end
 
               opts.on('-e', '--end WORD', 'End with given word') do |word|
-                options[:dictate_end] = word
+                options[:word_end] = word
               end
 
               opts.on('-s', '--start LINE', Integer, 'Start with given line') do |line|
-                options[:dictate_start] = line
+                options[:line_start] = line
               end
 
               opts.on('-f', '--finish LINE', Integer, 'Finish with given line') do |line|
-                options[:dictate_finish] = line
+                options[:line_finish] = line
               end
             end,
 
@@ -58,19 +58,19 @@ module Dictation
               end
 
               opts.on('-b', '--begin WORD', 'Begin with given word') do |word|
-                options[:verify_begin] = word
+                options[:word_begin] = word
               end
 
               opts.on('-e', '--end WORD', 'End with given word') do |word|
-                options[:verify_end] = word
+                options[:word_end] = word
               end
 
               opts.on('-s', '--start LINE', Integer, 'Start with given line') do |line|
-                options[:verify_start] = line
+                options[:line_start] = line
               end
 
               opts.on('-f', '--finish LINE', Integer, 'Finish with given line') do |line|
-                options[:verify_finish] = line
+                options[:line_finish] = line
               end
             end
         }
