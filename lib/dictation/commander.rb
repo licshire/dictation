@@ -10,11 +10,11 @@ module Dictation
               opts.banner = set_banner('new')
 
               opts.on('-d', '--dictate TTS', 'Specify two-letters language code for dictation') do |tts|
-                options[:dictate] = tts
+                options[:dictate] = tts.downcase
               end
 
               opts.on('-v', '--verify TTS', 'Specify two-letters language code for verification') do |tts|
-                options[:verify] = tts
+                options[:verify] = tts.downcase
               end
             end,
 
