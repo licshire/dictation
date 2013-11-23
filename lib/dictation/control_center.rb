@@ -3,12 +3,9 @@ module Dictation
     class << self
       def launch
         if OperatingSystem.supported?
-          #valid_cmds = ['new', 'add', 'dictate', 'verify']
           command = ARGV[0]
           options = Commander.order(ARGV)
           case command
-          #when valid_cmds[0]
-          #  send("execute_#{valid_cmds[0]}")
           when 'new'
             execute_new(options)
           when 'add'
@@ -17,12 +14,6 @@ module Dictation
             execute_dictate(options)
           when 'verify'
             execute_verify(options)
-          #else
-            #cmds = valid_cmds.inject('') do |list, cmd|
-            #  list += "#{cmd}, "
-            #end
-            #cmds.gsub!(/,\s$/, '')
-            #puts 'Unknow command, only support #{valid_cmds.inspect}'
           end
         else
           puts 'Sorry, your Operating System is not supported.  Only Mac OSX has built-in TTS (Text-to-Speech).'
