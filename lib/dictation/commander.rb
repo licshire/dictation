@@ -74,8 +74,13 @@ module Dictation
               end
             end
         }
-        commands[args.shift].order!
-        options
+        valid_cmds = ['new', 'add', 'dictate', 'verify']
+        if valid_cmds.include?(args[0])
+          commands[args.shift].order!
+          options
+        else
+          puts "Unknown commands [#{args[0]}], only support #{valid_cmds.inspect}."
+        end
       end
 
       def get_caller_file_name
