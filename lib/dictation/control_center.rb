@@ -38,7 +38,7 @@ module Dictation
             puts 'Can not find any dictionary file.'
           end
         else
-          puts 'Please specify the target language.'
+          puts 'Please specify the target language (-l).'
         end
       end
 
@@ -101,13 +101,17 @@ module Dictation
       end
 
       def execute_speak(options, action)
-        words = get_words(options)
-        dictionary = get_dictionary(options[:language])
-        if dictionary
-          teacher = set_teacher(dictionary)
-          teacher.send(action, words)
+        if options.has_key?(:language)
+          words = get_words(options)
+          dictionary = get_dictionary(options[:language])
+          if dictionary
+            teacher = set_teacher(dictionary)
+            teacher.send(action, words)
+          else
+            puts 'Please check if the given language is correct (two-letters country code) or whether the dictionary file exists.'
+          end
         else
-          puts 'Please check if the given language is correct (two-letter country code) or whether the dictionary file exists.'
+          puts 'Please specify target learning language by two-letters country code (-l)'
         end
       end
     end
