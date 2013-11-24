@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'dictation'
-  s.version     = '0.0.0'
+  s.version     = '1.0.0'
   s.license     = 'MIT'
   s.date        = '2013-10-27'
   s.summary     = "Practice foreign language by listening and writing."
@@ -18,5 +18,7 @@ Gem::Specification.new do |s|
     lib/dictation/commander.rb
     lib/dictation/typewriter.rb
     lib/dictation/control_center.rb
+    bin/dictation
   ]
+  s.executables = ['dictation']
 end
