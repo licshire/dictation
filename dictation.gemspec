@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'dictation'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.license     = 'MIT'
   s.date        = '2013-10-27'
   s.summary     = "Practice foreign language by listening and writing."
