@@ -13,14 +13,7 @@ module Dictation
       def deserialize(file)
         words = []
         File.open(file).each do |line|
-          obj = JSON.parse(line)
-          if obj.is_a?(Hash)
-            class_name = obj['json_class'].split('::').inject(Kernel) { |namespace, const_name| namespace.const_get(const_name) }
-            args = obj['data']
-            word = class_name.new(*args)
-          else
-            word = obj
-          end
+          word = JSON.load(line)
           words.push(word)
         end
         words
