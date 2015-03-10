@@ -42,5 +42,7 @@ module Dictation
         end
       end
     end
+    
+    private_class_method :new
   end
 end
